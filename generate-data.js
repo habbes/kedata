@@ -50,8 +50,7 @@ function generateDb(){
                             if(err)return reject(err);
                             resolve(db);
                         });                        
-                    });
-                    
+                    });                    
                 }
             );
         });
@@ -60,17 +59,18 @@ function generateDb(){
 
 /**
  * Initialize json db with county names and ids
+ * @param {object} namesIdMap map of county names to ids
  */
-function initDb(counties){
+function initDb(namesIdMap){
     let db = {};
     db.data = {};
     db.datasets = [];
     
-    for(let county in counties){
-        let id = counties[county];
+    for(let name in namesIdMap){
+        let id = namesIdMap[name];
         db.data[id] = {
             id: id,
-            name: county
+            name: name
         };
     }
     return db;
