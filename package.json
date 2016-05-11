@@ -26,6 +26,7 @@
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "es6ify": "^1.6.0",
+    "jquery": "^2.2.3",
     "watchify": "^3.7.0"
   }
 }
