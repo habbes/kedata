@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "browserify client-src/app.js -o public/bundle.js",
+    "watch": "watchify client-src/app.js  -o public/bundle.js --debug --verbose"
   },
   "dependencies": {
     "async": "^2.0.0-rc.4",
@@ -15,5 +17,11 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "angular": "^1.5.5",
+    "angular-ui-router": "^0.2.18",
+    "browserify": "^13.0.1",
+    "watchify": "^3.7.0"
   }
 }
