@@ -1,0 +1,16 @@
+<div class="row" ng-controller="ChoroplethController as vm">
+    <div class="col-md-3">
+        <h2>Datasets</h2>
+        <div class="list-group">
+            <div class="list-group-item dataset-list-item" ng-repeat="dataset in vm.data.datasets"
+                ng-click="vm.selectDataset(dataset)"
+                ng-class="{selected: dataset===vm.currentDataset}">
+                {{ dataset }}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <h2>{{ vm.currentDataset }}</h2>
+        
+    </div>
+</div>
