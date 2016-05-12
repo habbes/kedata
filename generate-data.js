@@ -4,6 +4,29 @@
  * This script converts datasets data from csv files in
  * the resources/datasets folder to a json db compatible
  * with the svg map data and easier to access by the app
+ * 
+ * The json db will have the following structure
+ * 
+ * {
+ *   counties: {
+ *      county1id: {
+ *          id: 'county1id',
+ *          name: 'county1name'
+ *      },
+ *      ...
+ *   },
+ *   datasets: [
+ *      'dataset1',
+ *      ...
+ *   ],
+ *   data: {
+ *      dataset1: {
+ *          county1id: value,
+ *          ...
+ *      },
+ *      ...
+ *   }
+ * }
  */
 
 const csv = require('csv-parser');
@@ -63,12 +86,13 @@ function generateDb(){
  */
 function initDb(namesIdMap){
     let db = {};
+    db.counties = {};
     db.data = {};
     db.datasets = [];
     
     for(let name in namesIdMap){
         let id = namesIdMap[name];
-        db.data[id] = {
+        db.counties[id] = {
             id: id,
             name: name
         };
@@ -100,6 +124,8 @@ function readDataset(dataset, db, namesIdMap){
         console.log(`-Dataset: ${dataset}`);
         let datasetName = path.basename(dataset, '.csv');
         db.datasets.push(datasetName);
+        // object to store dataset values for each county
+        db.data[datasetName] = {};
         fs.createReadStream(dataset)
         // the csv files have 3 columns
         .pipe(csv(['Country','County', datasetName]))
@@ -110,8 +136,9 @@ function readDataset(dataset, db, namesIdMap){
                 return console.warn(`--WARN: Unknown County: ${county} in ${dataset}`);
             }
             
+            // store county's value for this dataset
             let id = namesIdMap[county];
-            db.data[id][datasetName] = row[datasetName];            
+            db.data[datasetName][id] = row[datasetName];            
         })
         .on('end', () => {
             resolve(db);
