@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "build": "browserify client-src/app.js -o public/bundle.js",
     "watch": "watchify client-src/app.js  -o public/bundle.js --debug --verbose",
-    "postinstall": "npm build"
+    "data": "node generate-data",
+    "postinstall": "npm run build && npm run data"
   },
   "dependencies": {
     "async": "^2.0.0-rc.4",
