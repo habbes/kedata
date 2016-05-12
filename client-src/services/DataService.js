@@ -10,7 +10,7 @@ function DataService($http, localStorageService){
                 return resolve(data);
             return fetchData()
             .then((res) => {
-                localStorageService.set('data', res);
+                localStorageService.set('data', res.data);
                 resolve(res);
             });
         });
