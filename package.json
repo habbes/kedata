@@ -35,7 +35,8 @@
   },
   "browser": {
     "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js",
-    "jvectormap": "./client-src/lib/jquery-jvectormap-2.0.3.min.js"
+    "jvectormap": "./client-src/lib/jquery-jvectormap-2.0.3.min.js",
+    "kenyamap": "./client-src/maps/kenya.js"
   },
   "browserify": {
     "transform": [
@@ -44,12 +45,18 @@
     ]
   },
   "browserify-shim": {
+    "jquery": "$",
     "bootstrap": {
       "depends":[
         "jquery:jQuery"
       ]
     },
     "jvectormap": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "kenyamap": {
       "depends": [
         "jquery:jQuery"
       ]
