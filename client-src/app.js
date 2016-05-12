@@ -6,11 +6,13 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import routes from './routes';
 import './services';
+import './choropleth';
 import initData from './initdata';
 
 angular.module('app',[
     uiRouter,
-    'app.services'
+    'app.services',
+    'app.choropleth'
 
 ])
 .config(['$urlRouterProvider','$stateProvider', routes])
