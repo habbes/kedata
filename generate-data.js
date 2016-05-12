@@ -44,8 +44,9 @@ const DB_FILENAME = 'data.json';
  * run script if started directly
  */
 if(require.main === module){
+    console.log('-- Genrating JSON data');
     generateDb()
-    .then(() => console.log('db.json generated successfully'))
+    .then(() => console.log(`#{DB_DIR}/${DB_FILENAME} generated successfully`))
     .catch(console.err);
 }
 
@@ -145,6 +146,3 @@ function readDataset(dataset, db, namesIdMap){
         });
     });
 }
-
-
-
