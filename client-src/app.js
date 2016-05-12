@@ -2,7 +2,9 @@
 
 import 'babel-polyfill';
 import 'jquery';
+import 'bootstrap';
 import angular from 'angular';
+import 'angular-ui-bootstrap';
 import uiRouter from 'angular-ui-router';
 import routes from './routes';
 import './services';
