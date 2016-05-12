@@ -7,7 +7,7 @@ export default function($urlRouterProvider, $stateProvider){
     $stateProvider
     .state('choropleth', {
        url: '/choropleth',
-       templateUrl: 'choropleth/coropleth.html'
+       templateUrl: 'choropleth/choropleth.html'
     });
     
 }
