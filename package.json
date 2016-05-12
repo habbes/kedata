@@ -34,7 +34,8 @@
     "watchify": "^3.7.0"
   },
   "browser": {
-    "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js"
+    "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js",
+    "jvectormap": "./client-src/lib/jquery-jvectormap-2.0.3.min.js"
   },
   "browserify": {
     "transform": [
@@ -45,6 +46,11 @@
   "browserify-shim": {
     "bootstrap": {
       "depends":[
+        "jquery:jQuery"
+      ]
+    },
+    "jvectormap": {
+      "depends": [
         "jquery:jQuery"
       ]
     }

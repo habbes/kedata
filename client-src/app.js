@@ -3,6 +3,7 @@
 import 'babel-polyfill';
 import 'jquery';
 import 'bootstrap';
+import 'jvectormap';
 import angular from 'angular';
 import 'angular-ui-bootstrap';
 import uiRouter from 'angular-ui-router';
