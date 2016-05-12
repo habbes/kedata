@@ -1,6 +1,8 @@
 'use strict';
 
-module.exports = function ChoroplethController(DataService) {
+export default ChoroplethController;
+
+function ChoroplethController(DataService) {
     const vm = this;
     
     vm.selectDataset = dset => vm.currentDataset = dset;
