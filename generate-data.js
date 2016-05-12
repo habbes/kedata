@@ -68,7 +68,7 @@ function generateDb(){
                     if(err) return reject(err);
                     fs.mkdir(DB_DIR, (err) => {
                         // ignore 'directory exists' error
-                        if(err.code !== 'EEXIST') return reject(err);
+                        if(err && err.code !== 'EEXIST') return reject(err);
                         fs.writeFile(path.join(DB_DIR, DB_FILENAME), JSON.stringify(db), (err) => {
                             if(err)return reject(err);
                             resolve(db);
