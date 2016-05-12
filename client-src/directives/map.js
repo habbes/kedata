@@ -52,8 +52,13 @@ export default function(){
                         regions: [{
                             values: dataset,
                             scale: ['#C8EEFF', '#0071A4'],
-                            normalizeFunction: 'polynomial'
+                            legend: {
+                                vertical: true,
+                            }
                         }]
+                    },
+                    onRegionTipShow: (e, tip, code) => {
+                        $(tip).html(`${scope.data.counties[code].name} : ${dataset[code]}`);
                     },
                     zoomOnScroll: false, // set it to false to avoid errors for missing mousewheel event
                 });
