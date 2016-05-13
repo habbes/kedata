@@ -18,7 +18,8 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "underscore.string": "^3.3.4"
   },
   "devDependencies": {
     "angular": "^1.5.5",
@@ -49,13 +50,14 @@
   "browserify-shim": {
     "jquery": "$",
     "bootstrap": {
-      "depends":[
+      "depends": [
         "jquery:jQuery"
       ]
     },
     "jvectormap": {
       "depends": [
-        "jquery:jQuery"
+        "jquery:jQuery",
+        "jquery:$"
       ]
     },
     "kenyamap": {

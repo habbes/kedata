@@ -33,6 +33,7 @@ const csv = require('csv-parser');
 const fs = require('fs');
 const path = require('path');
 const async = require('async');
+const s = require('underscore.string');
 const countiesIds = require('./resources/counties-ids.json');
 
 const DATASET_DIR = 'resources/datasets';
@@ -137,9 +138,14 @@ function readDataset(dataset, db, namesIdMap){
                 return console.warn(`--WARN: Unknown County: ${county} in ${dataset}`);
             }
             
-            // store county's value for this dataset
+            
             let id = namesIdMap[county];
-            db.data[datasetName][id] = row[datasetName];            
+            // convert value to number
+            let value = s(row[datasetName]).clean().replaceAll(',','').toNumber(3);
+            // if not number revert to original
+            if(value === NaN) value = row[datasetName];
+            // store county's value for this dataset
+            db.data[datasetName][id] = value;            
         })
         .on('end', () => {
             resolve(db);
