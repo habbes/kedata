@@ -46,7 +46,7 @@ const DB_FILENAME = 'data.json';
 if(require.main === module){
     console.log('-- Genrating JSON data');
     generateDb()
-    .then(() => console.log(`#{DB_DIR}/${DB_FILENAME} generated successfully`))
+    .then(() => console.log(`${DB_DIR}/${DB_FILENAME} generated successfully`))
     .catch(console.err);
 }
 
