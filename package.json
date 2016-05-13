@@ -63,5 +63,8 @@
         "jquery:jQuery"
       ]
     }
+  },
+  "engines": {
+    "node": "5.5.0"
   }
 }
