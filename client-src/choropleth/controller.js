@@ -12,4 +12,4 @@ function ChoroplethController(DataService) {
         vm.data = data;
     });    
     
-};
+}

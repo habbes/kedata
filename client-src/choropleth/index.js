@@ -5,4 +5,4 @@ import services from '../services';
 import ChoroplethController from './controller';
 
 angular.module('app.choropleth', ['app.services'])
-.controller('ChoroplethController', ['DataService', ChoroplethController]);
+.controller('ChoroplethController', ChoroplethController);
