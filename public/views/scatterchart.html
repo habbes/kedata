@@ -1,4 +1,18 @@
-<div class="row">
-    <div class="col-md-12">
+<div class="row" ng-controller="ScatterchartController as vm">
+    <div class="col-md-3">
+        <h2>Datasets</h2>
+        <h3>x-Axis</h3>
+        <select ng-model="vm.xDataset" 
+            ng-options="dataset for dataset in vm.data.datasets"
+            class="form-control"></select>
+        <h3>y-Axis</h3>
+        <select ng-model="vm.yDataset" 
+            ng-options="dataset for dataset in vm.data.datasets"
+            class="form-control"></select>
+    </div>
+    <div class="col-md-9">
+        <p class="well" ng-hide="vm.xDataset && vm.yDataset">Select datasets to plot</p>
+        <h2>{{vm.xDataset}}/{{vm.yDataset}}</h2>
+        <div scatterchart id="chart" db="vm.data" xdataset="vm.xDataset" ydataset="vm.yDataset"></div>
     </div>
 </div>    
