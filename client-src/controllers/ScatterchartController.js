@@ -1,6 +1,6 @@
 export default ScatterchartController;
 
-function ScatterchartController(DataService) {
+function ScatterchartController($scope, DataService) {
     
     const vm = this;
     
@@ -10,8 +10,9 @@ function ScatterchartController(DataService) {
         vm.data = data;
         vm.xDataset = data.datasets[0];
         vm.yDataset = data.datasets[1];
-        console.log('x',  vm.xDataset);
-        console.log('y', vm.yDataset);
+        try {
+            $scope.$apply();
+        } catch(e){}
     })
     .catch(console.err);
     

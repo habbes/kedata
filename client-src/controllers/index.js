@@ -6,5 +6,5 @@ import ChoroplethController from './ChoroplethController';
 import ScatterchartController from './ScatterchartController';
 
 angular.module('app.controllers', ['app.services'])
-.controller('ChoroplethController', ['DataService', ChoroplethController])
-.controller('ScatterchartController', ['DataService', ScatterchartController]);
+.controller('ChoroplethController', ['$scope','DataService', ChoroplethController])
+.controller('ScatterchartController', ['$scope','DataService', ScatterchartController]);

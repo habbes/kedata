@@ -2,7 +2,7 @@
 
 export default ChoroplethController;
 
-function ChoroplethController(DataService) {
+function ChoroplethController($scope, DataService) {
     const vm = this;
     
     vm.selectDataset = dset => vm.currentDataset = dset;
@@ -10,6 +10,9 @@ function ChoroplethController(DataService) {
     DataService.getData()
     .then((data) => { 
         vm.data = data;
+        try {
+            $scope.$apply();
+        } catch(e){}
     });    
     
 }
