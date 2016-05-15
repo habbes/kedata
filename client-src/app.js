@@ -18,7 +18,7 @@ angular.module('app',[
     uiRouter,
     'app.services',
     'app.directives',
-    'app.choropleth'
+    'app.controllers'
 
 ])
 .config(['$urlRouterProvider','$stateProvider', routes])

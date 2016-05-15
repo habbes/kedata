@@ -2,7 +2,7 @@
 
 import angular from 'angular';
 import services from '../services';
-import ChoroplethController from './controller';
+import ChoroplethController from './ChoroplethController';
 
-angular.module('app.choropleth', ['app.services'])
+angular.module('app.controllers', ['app.services'])
 .controller('ChoroplethController', ChoroplethController);
