@@ -1,14 +1,18 @@
 <div class="row" ng-controller="CountyController as vm">
     <div class="col-md-3">
         <h2>Counties</h2>
-        <div class="list-group">
+        <!--<div class="list-group">
             <div class="list-group-item selection-list-item"
                 ng-repeat="(id, county) in vm.data.counties"
                 ng-class="{selected: vm.currentCounty.id===id}"
                 ng-click="vm.selectCounty(id)">
                 {{ county.name }}
             </div>
-        </div>
+        </div>-->
+        <select class="form-control"
+            ng-options="county as county.name for (id, county) in vm.data.counties"
+            ng-model="vm.currentCounty">
+        </select>
     </div>
     <div class="col-md-9">
         <p class="well" ng-hide="vm.currentCounty">
