@@ -10,6 +10,7 @@ function ChoroplethController($scope, DataService) {
     DataService.getData()
     .then((data) => { 
         vm.data = data;
+        vm.currentDataset = data.datasets[0];
         try {
             $scope.$apply();
         } catch(e){}
