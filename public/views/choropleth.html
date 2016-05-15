@@ -2,7 +2,7 @@
     <div class="col-md-3">
         <h2>Datasets</h2>
         <div class="list-group">
-            <div class="list-group-item dataset-list-item" ng-repeat="dataset in vm.data.datasets"
+            <div class="list-group-item selection-list-item" ng-repeat="dataset in vm.data.datasets"
                 ng-click="vm.selectDataset(dataset)"
                 ng-class="{selected: dataset===vm.currentDataset}">
                 {{ dataset }}

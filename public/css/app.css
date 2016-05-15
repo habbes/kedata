@@ -1,12 +1,12 @@
 
-.dataset-list-item {
+.selection-list-item {
     cursor: pointer;
 }
 
-.dataset-list-item:hover {
+.selection-list-item:hover {
     background-color: #E0F4F5;
 }
 
-.dataset-list-item.selected {
+.selection-list-item.selected {
     background-color: #A5DBED;
 }

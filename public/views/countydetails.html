@@ -1,24 +1,29 @@
-<div class="row" ng-controller="CountyController">
+<div class="row" ng-controller="CountyController as vm">
     <div class="col-md-3">
+        <h2>Counties</h2>
         <div class="list-group">
-            <div class="list-group-item"
-                ng-repeat="(id, name) in data.counties"
-                ng-class="{selected: currentCounty===id}"
-                ng-click="selectCounty(id)">
-                {{ name }}
+            <div class="list-group-item selection-list-item"
+                ng-repeat="(id, county) in vm.data.counties"
+                ng-class="{selected: vm.currentCounty.id===id}"
+                ng-click="vm.selectCounty(id)">
+                {{ county.name }}
             </div>
         </div>
-    <div>
+    </div>
     <div class="col-md-9">
+        <p class="well" ng-hide="vm.currentCounty">
+            Select a county to view details.
+        </p>
+        <h2>{{ vm.currentCounty.name }}</h2>
         <table class="table table-striped table-responsive">
             <tr>
                 <th>Dataset</th>
                 <th>Value</th>
                 <th>Rank</th>
             </tr>
-            <tr ng-repeat="dataset in data.datasets">
+            <tr ng-repeat="dataset in vm.data.datasets">
                 <td>{{ dataset }}</td>
-                <td>{{ data.data[dataset][id] }}</td>
+                <td>{{ vm.data.data[dataset][vm.currentCounty.id] }}</td>
                 <td></td>
             </tr>
         </table>
