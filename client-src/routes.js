@@ -16,6 +16,10 @@ export default function($urlRouterProvider, $stateProvider){
     .state('scatterchart', {
         url: '/scatterchart',
         templateUrl: 'views/scatterchart.html'
+    })
+    .state('countydetails', {
+        url: '/countydetails/:id',
+        templateUrl: 'views/countydetails.html'
     });
     
 }
