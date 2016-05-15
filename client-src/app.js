@@ -11,7 +11,7 @@ import uiRouter from 'angular-ui-router';
 import routes from './routes';
 import './services';
 import './directives';
-import './choropleth';
+import './controllers';
 import initData from './initdata';
 
 angular.module('app',[
