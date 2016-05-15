@@ -12,6 +12,10 @@ export default function($urlRouterProvider, $stateProvider){
     .state('choropleth', {
        url: '/choropleth',
        templateUrl: 'views/choropleth.html'
+    })
+    .state('scatterchart', {
+        url: '/scatterchart',
+        templateUrl: 'views/scatterchart.html'
     });
     
 }
