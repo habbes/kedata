@@ -33,6 +33,7 @@
     "browserify": "^13.0.1",
     "browserify-shim": "^3.8.12",
     "es6ify": "^1.6.0",
+    "highcharts": "^4.2.5",
     "jquery": "^2.2.3",
     "watchify": "^3.7.0"
   },
