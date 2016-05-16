@@ -1,26 +1,30 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <h1 class="page-header">KeData</h1>
-        <p>
-            KeData helps you visualize statistical data about Kenya's 47 counties.
-            Currently the following tools are available.
-        </p>
-        <h2>Map View</h2>
+        
+        <div class="jumbotron">
+            <h1 class="header">KeData</h1>
+            <p class="big">
+                KeData helps you visualize statistical data about Kenya's 47 counties.                
+            </p>
+        </div>
+        <h2 class="page-header">Available Tools</h2>
+        <h3>Map View</h3>
         <p>
             This displays a choropleth map of the different counties for each available dataset.
         </p>
         <a ui-sref="choropleth" class="btn btn-default">Open Map View</a>
-        <h2>Scatter Chart</h2>
+        <h3>Scatter Chart</h3>
         <p>
             This tool allows you two plot two datasets. It can help discover relationships
             between two variables.
         </p>
         <a ui-sref="scatterchart" class="btn btn-default">Open Scatter Chart</a>
-        <h2>County Details</h2>
+        <h3>County Details</h3>
         <p>
             This displays table view of the different characteristics of each county and how they
             rank compared to other counties.
         </p>
         <a ui-sref="countydetails" class="btn btn-default">Open Details View</a>
+        <hr>
     </div>
 </div>
