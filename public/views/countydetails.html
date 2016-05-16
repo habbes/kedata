@@ -28,7 +28,7 @@
             <tr ng-repeat="dataset in vm.data.datasets">
                 <td>{{ dataset }}</td>
                 <td>{{ vm.data.data[dataset][vm.currentCounty.id] }}</td>
-                <td></td>
+                <td>{{ vm.rank(dataset) }}</td>
             </tr>
         </table>
     </div>
