@@ -6,6 +6,6 @@ import scatter from './scatterchart';
 import countyrank from './countyrankchart';
 
 angular.module('app.directives', ['app.services'])
-.directive('map', map)
-.directive('scatterchart', scatter)
-.directive('countyrankchart', countyrank);
+.directive('map', [map])
+.directive('scatterchart', [scatter])
+.directive('countyrankchart', ['DataService', countyrank]);
