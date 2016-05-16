@@ -6,8 +6,8 @@ function CountyController($scope, DataService) {
     
     this.selectCounty = id => { this.currentCounty = this.data.counties[id]; };
     
-    this.rank = (dataset) => 
-        rank(this.currentCounty, _.values(this.data.counties), this.data.data[dataset]);
+    this.rank = dataset => DataService.getCountyRank(this.currentCounty, dataset);
+        
     
     DataService.getData()
     .then((data) => {
