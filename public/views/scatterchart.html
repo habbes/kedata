@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-9">
         <p class="well" ng-hide="vm.xDataset && vm.yDataset">Select datasets to plot</p>
-        <h2>{{vm.xDataset}}/{{vm.yDataset}}</h2>
+        <h2>{{vm.xDataset}} - {{vm.yDataset}}</h2>
         <div scatterchart id="chart" db="vm.data" xdataset="vm.xDataset" ydataset="vm.yDataset"></div>
     </div>
 </div>    

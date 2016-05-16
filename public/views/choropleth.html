@@ -1,13 +1,10 @@
 <div class="row" ng-controller="ChoroplethController as vm">
     <div class="col-md-3">
         <h2>Datasets</h2>
-        <div class="list-group">
-            <div class="list-group-item selection-list-item" ng-repeat="dataset in vm.data.datasets"
-                ng-click="vm.selectDataset(dataset)"
-                ng-class="{selected: dataset===vm.currentDataset}">
-                {{ dataset }}
-            </div>
-        </div>
+        <select class="form-control"
+            ng-options="dataset for dataset in vm.data.datasets"
+            ng-model="vm.currentDataset">
+        </select>
     </div>
     <div class="col-md-9">
         <p class="well" ng-hide="vm.currentDataset">Choose Dataset to visualize.</p>

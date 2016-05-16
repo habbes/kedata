@@ -30,6 +30,7 @@ export default function(){
                 ({
                     map: 'kenya',
                     backgroundColor: 'transparent',
+                    zoomStep: 1.6,
                     regionStyle: {
                         initial: {
                             fill: 'white',
