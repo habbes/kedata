@@ -45,7 +45,7 @@ const DB_FILENAME = 'data.json';
  * run script if started directly
  */
 if(require.main === module){
-    console.log('-- Genrating JSON data');
+    console.log('-- Generating JSON data');
     generateDb()
     .then(() => console.log(`${DB_DIR}/${DB_FILENAME} generated successfully`))
     .catch(console.err);
@@ -129,8 +129,8 @@ function readDataset(dataset, db, namesIdMap){
         // object to store dataset values for each county
         db.data[datasetName] = {};
         fs.createReadStream(dataset)
-        // the csv files have 3 columns
-        .pipe(csv(['Country','County', datasetName]))
+        // the csv files have 2 columns
+        .pipe(csv(['County', datasetName]))
         .on('data', (row) => {
             let key = 'Counties' in row? 'Counties': 'County';
             let county = row[key];
