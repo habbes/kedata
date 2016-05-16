@@ -3,6 +3,10 @@ import _ from 'lodash';
 export default DataService;
 
 function DataService($http, localStorageService){
+    /**
+     * fetches and caches the json db, checks
+     * the cache first
+     */
     function getData(){
         return new Promise((resolve, reject) => {
             let data = localStorageService.get('data');
@@ -15,11 +19,34 @@ function DataService($http, localStorageService){
             });
         });
     }
-
+    
+    /**
+     * fetches and caches the json db, does not
+     * attempt to retrieve from cache
+     */
+    function refreshData(){
+        return new Promise((resolve, reject) => {
+            return fetchData()
+                .then(res => {
+                    localStorageService.set('data', res.data);
+                    resolve(res);
+                });
+        });
+    }
+    
+    /**
+     * fetch the json db
+     */
     function fetchData(){
         return $http.get('/data/data.json');
     }
     
+    /**
+     * get the rank position of a county for the specified dataset
+     * @param {object} county
+     * @param {string} dataset
+     * @return {number}
+     */
     function getCountyRank(county, dataset){
         // check cache first
         let rank = inCache();
@@ -58,6 +85,7 @@ function DataService($http, localStorageService){
 
     return {
         getData,
+        refreshData,
         getCountyRank
     };
 }

@@ -13,7 +13,7 @@
 </head>
 <body ng-app="app">
 
-    <header>
+    <header ng-controller="HeaderController as vm">
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
@@ -30,6 +30,14 @@
                         <li><a ui-sref="choropleth">Map View</a></li>
                         <li><a ui-sref="scatterchart">Scatter Chart</a></li>
                         <li><a ui-sref="countydetails">County Details</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a ui-sref="" ng-click="vm.refreshData()" style="cursor:pointer">
+                                <i class="fa fa-refresh" ng-class="{'fa-spin fa-fw': vm.refreshing }"></i>
+                                Refresh Data
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
