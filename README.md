@@ -17,6 +17,6 @@ To add a new dataset:
 - Run `$ npm run data`, this will regenerate JSON database with the dataset included in `public/data/data.json`
 - **Note:** The application currently only supports datasets with 2 columns, one for the county names and the other for numeric values
 - **Note:** This command will log warnings when it finds a county name it cannot match. Correct that row with correct county name
-- Counties in the csv should have the same name as in the `resouces/counties-ids.json` file
+- Counties in the csv should have the same name as in the `resources/counties-ids.json` file
 
 
