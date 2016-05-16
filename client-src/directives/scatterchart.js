@@ -11,7 +11,6 @@ export default function(){
         },
         link: (scope, element, attrs) => {
             
-            console.log('link');
             scope.$watch('xDataset', (value) => {
                 refreshChart(value, scope.yDataset); 
             });
